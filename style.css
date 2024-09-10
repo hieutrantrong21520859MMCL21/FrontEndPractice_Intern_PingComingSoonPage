@@ -1,0 +1,190 @@
+:root {
+    --color_blue: hsl(223, 87%, 63%);
+    --color_pale_blue: hsl(223, 100%, 88%);
+    --color_light_red: hsl(354, 100%, 66%);
+    --color_gray: hsl(0, 0%, 59%);
+    --color_dark_blue: hsl(209, 33%, 12%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+article {
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    margin-top: 100px;
+    text-align: center;
+}
+
+header img {
+    width: 70px;
+}
+
+header h1 span {
+    color: var(--color_gray);
+    font-weight: 300;
+}
+
+section {
+    margin-top: 20px;
+}
+
+section form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+section form input {
+    border-radius: 30px;
+    border-style: solid;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 300;
+}
+
+section form #email {
+    padding-left: 30px;
+    border-color: var(--color_blue);
+}
+
+section form #email::placeholder {
+    color: var(--color_blue);
+    opacity: 0.5;
+}
+
+section form label {
+    padding-bottom: 20px;
+
+    font-size: 12px;
+    color: var(--color_light_red);
+    font-style: italic;
+    text-align: center;
+    font-weight: 600;
+}
+
+section form #submit {
+    background-color: var(--color_blue);
+
+    color: white;
+    font-weight: 600;
+
+    box-shadow: 0px 5px 10px var(--color_pale_blue);
+
+    cursor: pointer;
+}
+
+section form #submit:hover {
+    background-color: hsl(223, 100%, 80%);
+}
+
+section img {
+    /* margin-top: 80px; */
+    margin-top: 40px;
+    width: 100%;
+}
+
+footer {
+    margin-top: 120px;
+    padding-bottom: 30px;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+footer nav {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+}
+
+footer nav div {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--color_pale_blue);
+    border-radius: 50%;
+
+    position: relative;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+footer nav div i{
+    font-size: 16px;
+    color: var(--color_blue);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+footer p {
+    font-size: 12px;
+    color: var(--color_gray);
+    font-weight: 300;
+}
+
+footer nav div:hover {
+    background-color: var(--color_blue);
+}
+
+footer nav div:hover i{
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+#email.invalid {
+    border-color: var(--color_light_red);
+}
+
+@media screen and (min-width: 768px) {
+    article {
+        width: 614px;
+    }
+
+    section form {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    section form #email {
+        width: 60%;
+    }
+
+    section form label {
+        /* text-align: start; */
+        margin-left: 30px;
+        order: 1;
+    }
+
+    section form #submit {
+        width: 35%;
+    }
+}
